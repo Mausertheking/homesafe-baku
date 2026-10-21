@@ -1,0 +1,29 @@
+rules_version = '2';
+
+// HomeSafe Storage security rules.
+// - Evidence photos live in a private per-user path. Only the owner can read
+//   them; nobody can make them public.
+// - A photo can be uploaded once and never replaced or deleted by the client
+//   (the server hash must keep matching). Account deletion removes them via
+//   the Admin SDK.
+// - Reports, letters and exports are written by Cloud Functions and shared
+//   only through short-lived signed URLs, so clients get no direct access.
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /users/{uid}/homes/{homeId}/evidence/{itemId}/{fileName} {
+      allow read: if request.auth != null && request.auth.uid == uid;
+      // `resource == null`: the object must not exist yet, so an upload can
+      // never overwrite (some clients/emulators treat overwrites as create).
+      allow create: if request.auth != null && request.auth.uid == uid
+        && resource == null
+        && fileName == 'photo.jpg'
+        && request.resource.size < 15 * 1024 * 1024
+        && request.resource.contentType.matches('image/.*');
+      allow update, delete: if false;
+    }
+
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

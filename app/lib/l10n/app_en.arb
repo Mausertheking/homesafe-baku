@@ -1,0 +1,1129 @@
+{
+  "@@locale": "en",
+  "appTitle": "HomeSafe",
+  "@appTitle": {
+    "description": "appTitle"
+  },
+  "continueLabel": "Continue",
+  "@continueLabel": {
+    "description": "continueLabel"
+  },
+  "back": "Back",
+  "@back": {
+    "description": "back"
+  },
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "cancel"
+  },
+  "save": "Save",
+  "@save": {
+    "description": "save"
+  },
+  "close": "Close",
+  "@close": {
+    "description": "close"
+  },
+  "done": "Done",
+  "@done": {
+    "description": "done"
+  },
+  "next": "Next",
+  "@next": {
+    "description": "next"
+  },
+  "yes": "Yes",
+  "@yes": {
+    "description": "yes"
+  },
+  "no": "No",
+  "@no": {
+    "description": "no"
+  },
+  "notSure": "Not sure",
+  "@notSure": {
+    "description": "notSure"
+  },
+  "retry": "Try again",
+  "@retry": {
+    "description": "retry"
+  },
+  "loading": "Loading…",
+  "@loading": {
+    "description": "loading"
+  },
+  "errorGeneric": "Something went wrong. Please try again.",
+  "@errorGeneric": {
+    "description": "errorGeneric"
+  },
+  "offlineNotice": "You are offline. Some features need the internet.",
+  "@offlineNotice": {
+    "description": "offlineNotice"
+  },
+  "signInRequired": "Sign in to use this.",
+  "@signInRequired": {
+    "description": "signInRequired"
+  },
+  "signIn": "Sign in",
+  "@signIn": {
+    "description": "signIn"
+  },
+  "backendUnavailable": "This feature is not available right now. Try again later.",
+  "@backendUnavailable": {
+    "description": "backendUnavailable"
+  },
+  "emergencyButton": "Emergency",
+  "@emergencyButton": {
+    "description": "emergencyButton"
+  },
+  "emergencyButtonHint": "Opens the emergency steps and phone numbers",
+  "@emergencyButtonHint": {
+    "description": "emergencyButtonHint"
+  },
+  "emergencyTitle": "Emergency",
+  "@emergencyTitle": {
+    "description": "emergencyTitle"
+  },
+  "emergencyIntro": "If you smell gas, a CO alarm sounds, or someone feels dizzy, sick or faint:",
+  "@emergencyIntro": {
+    "description": "emergencyIntro"
+  },
+  "emergencyStep1": "Get everyone out now. Leave the door open behind you.",
+  "@emergencyStep1": {
+    "description": "emergencyStep1"
+  },
+  "emergencyStep2": "Do not touch light switches, sockets or anything with a flame. Do not call from inside.",
+  "@emergencyStep2": {
+    "description": "emergencyStep2"
+  },
+  "emergencyStep3": "Call for help from outside the building.",
+  "@emergencyStep3": {
+    "description": "emergencyStep3"
+  },
+  "emergencyStep4": "Do not go back in until the gas service says it is safe.",
+  "@emergencyStep4": {
+    "description": "emergencyStep4"
+  },
+  "emergencyStep5": "See a doctor, even if you feel better. Say you may have breathed gas or carbon monoxide.",
+  "@emergencyStep5": {
+    "description": "emergencyStep5"
+  },
+  "emergencyCallSection": "Call for help",
+  "@emergencyCallSection": {
+    "description": "emergencyCallSection"
+  },
+  "emergencyCall": "Call {name}, {number}",
+  "@emergencyCall": {
+    "description": "emergencyCall",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "emergencyCallFailed": "Could not start the call. Dial {number} yourself.",
+  "@emergencyCallFailed": {
+    "description": "emergencyCallFailed",
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "emergencyNumbersUnverified": "DEVELOPER NOTE: these emergency numbers are not verified yet.",
+  "@emergencyNumbersUnverified": {
+    "description": "emergencyNumbersUnverified"
+  },
+  "emergencyImSafe": "I am safe now",
+  "@emergencyImSafe": {
+    "description": "emergencyImSafe"
+  },
+  "onboardingWhatTitle": "A safer home",
+  "@onboardingWhatTitle": {
+    "description": "onboardingWhatTitle"
+  },
+  "onboardingWhatBody": "HomeSafe helps you check gas heaters, carbon monoxide, damp and mold. It helps you keep a record of problems and ask for repairs.",
+  "@onboardingWhatBody": {
+    "description": "onboardingWhatBody"
+  },
+  "onboardingSafetyTitle": "Important",
+  "@onboardingSafetyTitle": {
+    "description": "onboardingSafetyTitle"
+  },
+  "onboardingSafetyBody": "This app gives guidance, not a guarantee. In an emergency, call for help.",
+  "@onboardingSafetyBody": {
+    "description": "onboardingSafetyBody"
+  },
+  "onboardingSafetyAccept": "I understand",
+  "@onboardingSafetyAccept": {
+    "description": "onboardingSafetyAccept"
+  },
+  "onboardingLanguageTitle": "Choose your language",
+  "@onboardingLanguageTitle": {
+    "description": "onboardingLanguageTitle"
+  },
+  "onboardingStart": "Start",
+  "@onboardingStart": {
+    "description": "onboardingStart"
+  },
+  "languageAz": "Azərbaycanca",
+  "@languageAz": {
+    "description": "languageAz"
+  },
+  "languageRu": "Русский",
+  "@languageRu": {
+    "description": "languageRu"
+  },
+  "languageEn": "English",
+  "@languageEn": {
+    "description": "languageEn"
+  },
+  "changeLanguage": "Change language",
+  "@changeLanguage": {
+    "description": "changeLanguage"
+  },
+  "signInTitle": "Sign in",
+  "@signInTitle": {
+    "description": "signInTitle"
+  },
+  "signInWhy": "An account keeps your evidence log safe and lets you make reports and letters. Use your email.",
+  "@signInWhy": {
+    "description": "signInWhy"
+  },
+  "emailLabel": "Email",
+  "@emailLabel": {
+    "description": "emailLabel"
+  },
+  "passwordLabel": "Password",
+  "@passwordLabel": {
+    "description": "passwordLabel"
+  },
+  "signInEmail": "Sign in",
+  "@signInEmail": {
+    "description": "signInEmail"
+  },
+  "createAccount": "Create account",
+  "@createAccount": {
+    "description": "createAccount"
+  },
+  "tryWithoutAccount": "Try without an account",
+  "@tryWithoutAccount": {
+    "description": "tryWithoutAccount"
+  },
+  "guestNotice": "Without an account you can do the checks, but you cannot save evidence.",
+  "@guestNotice": {
+    "description": "guestNotice"
+  },
+  "authErrorEmail": "Check your email and password.",
+  "@authErrorEmail": {
+    "description": "authErrorEmail"
+  },
+  "authErrorWeakPassword": "Use at least 8 characters.",
+  "@authErrorWeakPassword": {
+    "description": "authErrorWeakPassword"
+  },
+  "profileTitle": "Your home",
+  "@profileTitle": {
+    "description": "profileTitle"
+  },
+  "profileIntro": "A few facts about your home make the checks more accurate.",
+  "@profileIntro": {
+    "description": "profileIntro"
+  },
+  "profileRole": "Do you rent or own your home?",
+  "@profileRole": {
+    "description": "profileRole"
+  },
+  "roleRenter": "I rent",
+  "@roleRenter": {
+    "description": "roleRenter"
+  },
+  "roleOwner": "I own it",
+  "@roleOwner": {
+    "description": "roleOwner"
+  },
+  "profileDistrict": "District",
+  "@profileDistrict": {
+    "description": "profileDistrict"
+  },
+  "profileBuildingAge": "When was the building built?",
+  "@profileBuildingAge": {
+    "description": "profileBuildingAge"
+  },
+  "ageBefore1960": "Before 1960",
+  "@ageBefore1960": {
+    "description": "ageBefore1960"
+  },
+  "age1960to1990": "1960 to 1990",
+  "@age1960to1990": {
+    "description": "age1960to1990"
+  },
+  "age1991to2010": "1991 to 2010",
+  "@age1991to2010": {
+    "description": "age1991to2010"
+  },
+  "ageAfter2010": "After 2010",
+  "@ageAfter2010": {
+    "description": "ageAfter2010"
+  },
+  "profileHeating": "How is your home heated?",
+  "@profileHeating": {
+    "description": "profileHeating"
+  },
+  "heatingIndividualGas": "Gas heater in the room",
+  "@heatingIndividualGas": {
+    "description": "heatingIndividualGas"
+  },
+  "heatingGasBoiler": "Gas boiler (kombi)",
+  "@heatingGasBoiler": {
+    "description": "heatingGasBoiler"
+  },
+  "heatingCentral": "Central heating",
+  "@heatingCentral": {
+    "description": "heatingCentral"
+  },
+  "heatingElectric": "Electric",
+  "@heatingElectric": {
+    "description": "heatingElectric"
+  },
+  "heatingOther": "Other",
+  "@heatingOther": {
+    "description": "heatingOther"
+  },
+  "profileWaterHeater": "Where is your gas water heater (kolonka)?",
+  "@profileWaterHeater": {
+    "description": "profileWaterHeater"
+  },
+  "waterHeaterBathroom": "Bathroom",
+  "@waterHeaterBathroom": {
+    "description": "waterHeaterBathroom"
+  },
+  "waterHeaterKitchen": "Kitchen",
+  "@waterHeaterKitchen": {
+    "description": "waterHeaterKitchen"
+  },
+  "waterHeaterOther": "Another room",
+  "@waterHeaterOther": {
+    "description": "waterHeaterOther"
+  },
+  "waterHeaterNone": "I do not have one",
+  "@waterHeaterNone": {
+    "description": "waterHeaterNone"
+  },
+  "profileCoAlarm": "Do you have a carbon monoxide (CO) alarm?",
+  "@profileCoAlarm": {
+    "description": "profileCoAlarm"
+  },
+  "profileContract": "Do you have a written rental agreement?",
+  "@profileContract": {
+    "description": "profileContract"
+  },
+  "profileSaved": "Saved",
+  "@profileSaved": {
+    "description": "profileSaved"
+  },
+  "cardGasTitle": "Gas and CO check",
+  "@cardGasTitle": {
+    "description": "cardGasTitle"
+  },
+  "cardGasBody": "Quick questions about heaters and air.",
+  "@cardGasBody": {
+    "description": "cardGasBody"
+  },
+  "cardDampTitle": "Damp and mold check",
+  "@cardDampTitle": {
+    "description": "cardDampTitle"
+  },
+  "cardDampBody": "Photos and questions to find the cause.",
+  "@cardDampBody": {
+    "description": "cardDampBody"
+  },
+  "cardEvidenceTitle": "Evidence log",
+  "@cardEvidenceTitle": {
+    "description": "cardEvidenceTitle"
+  },
+  "cardEvidenceBody": "Photos and notes with a proven date.",
+  "@cardEvidenceBody": {
+    "description": "cardEvidenceBody"
+  },
+  "cardLettersTitle": "Letters",
+  "@cardLettersTitle": {
+    "description": "cardLettersTitle"
+  },
+  "cardLettersBody": "Ask for a repair or an inspection.",
+  "@cardLettersBody": {
+    "description": "cardLettersBody"
+  },
+  "cardRightsTitle": "Your rights",
+  "@cardRightsTitle": {
+    "description": "cardRightsTitle"
+  },
+  "cardRightsBody": "Legal information in plain language.",
+  "@cardRightsBody": {
+    "description": "cardRightsBody"
+  },
+  "cardAskTitle": "Ask HomeSafe",
+  "@cardAskTitle": {
+    "description": "cardAskTitle"
+  },
+  "cardAskBody": "Questions about your home.",
+  "@cardAskBody": {
+    "description": "cardAskBody"
+  },
+  "seasonalTitle": "Heating season",
+  "@seasonalTitle": {
+    "description": "seasonalTitle"
+  },
+  "seasonalBody": "Test your CO alarm and keep vents and air grilles clear.",
+  "@seasonalBody": {
+    "description": "seasonalBody"
+  },
+  "settingsTooltip": "Settings",
+  "@settingsTooltip": {
+    "description": "settingsTooltip"
+  },
+  "profileMissing": "Tell us about your home for better results.",
+  "@profileMissing": {
+    "description": "profileMissing"
+  },
+  "profileSetUp": "Set up",
+  "@profileSetUp": {
+    "description": "profileSetUp"
+  },
+  "checkGasTitle": "Gas and CO check",
+  "@checkGasTitle": {
+    "description": "checkGasTitle"
+  },
+  "checkDampTitle": "Damp and mold check",
+  "@checkDampTitle": {
+    "description": "checkDampTitle"
+  },
+  "questionProgress": "Question {current} of {total}",
+  "@questionProgress": {
+    "description": "questionProgress",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "checkSeeResult": "See result",
+  "@checkSeeResult": {
+    "description": "checkSeeResult"
+  },
+  "photosTitle": "Add photos of the damp or mold",
+  "@photosTitle": {
+    "description": "photosTitle"
+  },
+  "photosBody": "Add 1 to 5 photos. They stay private.",
+  "@photosBody": {
+    "description": "photosBody"
+  },
+  "takePhoto": "Take photo",
+  "@takePhoto": {
+    "description": "takePhoto"
+  },
+  "choosePhoto": "Choose from gallery",
+  "@choosePhoto": {
+    "description": "choosePhoto"
+  },
+  "removePhoto": "Remove photo",
+  "@removePhoto": {
+    "description": "removePhoto"
+  },
+  "photoLabel": "Photo {number}",
+  "@photoLabel": {
+    "description": "photoLabel",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "multiSelectNone": "None of these",
+  "@multiSelectNone": {
+    "description": "multiSelectNone"
+  },
+  "resultTitle": "Result",
+  "@resultTitle": {
+    "description": "resultTitle"
+  },
+  "levelRed": "Urgent",
+  "@levelRed": {
+    "description": "levelRed"
+  },
+  "levelAmber": "Serious",
+  "@levelAmber": {
+    "description": "levelAmber"
+  },
+  "levelGreen": "Monitor",
+  "@levelGreen": {
+    "description": "levelGreen"
+  },
+  "levelRedHint": "Act now.",
+  "@levelRedHint": {
+    "description": "levelRedHint"
+  },
+  "levelAmberHint": "Get this fixed soon.",
+  "@levelAmberHint": {
+    "description": "levelAmberHint"
+  },
+  "levelGreenHint": "Keep an eye on it.",
+  "@levelGreenHint": {
+    "description": "levelGreenHint"
+  },
+  "resultWhy": "Why",
+  "@resultWhy": {
+    "description": "resultWhy"
+  },
+  "resultNextSteps": "What to do next",
+  "@resultNextSteps": {
+    "description": "resultNextSteps"
+  },
+  "resultSaveToEvidence": "Save to evidence log",
+  "@resultSaveToEvidence": {
+    "description": "resultSaveToEvidence"
+  },
+  "resultSaved": "Saved to your evidence log.",
+  "@resultSaved": {
+    "description": "resultSaved"
+  },
+  "resultAskAssistant": "Ask HomeSafe about this",
+  "@resultAskAssistant": {
+    "description": "resultAskAssistant"
+  },
+  "resultCausesTitle": "Likely causes",
+  "@resultCausesTitle": {
+    "description": "resultCausesTitle"
+  },
+  "causeCondensation": "Likely condensation",
+  "@causeCondensation": {
+    "description": "causeCondensation"
+  },
+  "causeLeak": "Likely a leak",
+  "@causeLeak": {
+    "description": "causeLeak"
+  },
+  "causeStructural": "Likely structural damp",
+  "@causeStructural": {
+    "description": "causeStructural"
+  },
+  "causeUnclear": "No clear cause from your answers",
+  "@causeUnclear": {
+    "description": "causeUnclear"
+  },
+  "resultDisclaimer": "This is guidance, not a guarantee. If you are worried, ask a professional.",
+  "@resultDisclaimer": {
+    "description": "resultDisclaimer"
+  },
+  "resultRulesUnreviewed": "These checks are still waiting for expert review.",
+  "@resultRulesUnreviewed": {
+    "description": "resultRulesUnreviewed"
+  },
+  "resultOpenEmergency": "Open emergency steps",
+  "@resultOpenEmergency": {
+    "description": "resultOpenEmergency"
+  },
+  "evidenceTitle": "Evidence log",
+  "@evidenceTitle": {
+    "description": "evidenceTitle"
+  },
+  "evidenceEmpty": "Nothing here yet. Add a photo or a note.",
+  "@evidenceEmpty": {
+    "description": "evidenceEmpty"
+  },
+  "evidenceAdd": "Add",
+  "@evidenceAdd": {
+    "description": "evidenceAdd"
+  },
+  "evidenceAddPhoto": "Photo",
+  "@evidenceAddPhoto": {
+    "description": "evidenceAddPhoto"
+  },
+  "evidenceAddNote": "Note",
+  "@evidenceAddNote": {
+    "description": "evidenceAddNote"
+  },
+  "evidenceAddSymptom": "Symptom",
+  "@evidenceAddSymptom": {
+    "description": "evidenceAddSymptom"
+  },
+  "evidenceNoteHint": "What happened?",
+  "@evidenceNoteHint": {
+    "description": "evidenceNoteHint"
+  },
+  "evidenceSymptomHint": "Who felt what, and when?",
+  "@evidenceSymptomHint": {
+    "description": "evidenceSymptomHint"
+  },
+  "evidencePhotoCaption": "Caption (optional)",
+  "@evidencePhotoCaption": {
+    "description": "evidencePhotoCaption"
+  },
+  "evidenceVerified": "Verified",
+  "@evidenceVerified": {
+    "description": "evidenceVerified"
+  },
+  "evidencePending": "Verifying…",
+  "@evidencePending": {
+    "description": "evidencePending"
+  },
+  "evidenceVerifiedHint": "The server recorded the time and a fingerprint (hash) of this item. Any later change would not match.",
+  "@evidenceVerifiedHint": {
+    "description": "evidenceVerifiedHint"
+  },
+  "evidenceServerTime": "Recorded {time}",
+  "@evidenceServerTime": {
+    "description": "evidenceServerTime",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "evidenceHash": "Fingerprint (SHA-256)",
+  "@evidenceHash": {
+    "description": "evidenceHash"
+  },
+  "evidenceDelete": "Remove from log",
+  "@evidenceDelete": {
+    "description": "evidenceDelete"
+  },
+  "evidenceDeleteConfirm": "Remove this item? It will be hidden from your log and reports. Its record stays in the history.",
+  "@evidenceDeleteConfirm": {
+    "description": "evidenceDeleteConfirm"
+  },
+  "evidenceTypePhoto": "Photo",
+  "@evidenceTypePhoto": {
+    "description": "evidenceTypePhoto"
+  },
+  "evidenceTypeNote": "Note",
+  "@evidenceTypeNote": {
+    "description": "evidenceTypeNote"
+  },
+  "evidenceTypeSymptom": "Symptom",
+  "@evidenceTypeSymptom": {
+    "description": "evidenceTypeSymptom"
+  },
+  "evidenceTypeCheck": "Check result",
+  "@evidenceTypeCheck": {
+    "description": "evidenceTypeCheck"
+  },
+  "evidenceTypeLetter": "Letter",
+  "@evidenceTypeLetter": {
+    "description": "evidenceTypeLetter"
+  },
+  "evidenceMakeReport": "Make a report",
+  "@evidenceMakeReport": {
+    "description": "evidenceMakeReport"
+  },
+  "evidenceUploading": "Uploading…",
+  "@evidenceUploading": {
+    "description": "evidenceUploading"
+  },
+  "reportTitle": "Make a report",
+  "@reportTitle": {
+    "description": "reportTitle"
+  },
+  "reportIntro": "The PDF includes your home details, check results, and evidence with times and fingerprints.",
+  "@reportIntro": {
+    "description": "reportIntro"
+  },
+  "reportFrom": "From",
+  "@reportFrom": {
+    "description": "reportFrom"
+  },
+  "reportTo": "To",
+  "@reportTo": {
+    "description": "reportTo"
+  },
+  "reportGenerate": "Create PDF",
+  "@reportGenerate": {
+    "description": "reportGenerate"
+  },
+  "reportGenerating": "Creating your report…",
+  "@reportGenerating": {
+    "description": "reportGenerating"
+  },
+  "reportReady": "Your report is ready.",
+  "@reportReady": {
+    "description": "reportReady"
+  },
+  "reportOpen": "Open report",
+  "@reportOpen": {
+    "description": "reportOpen"
+  },
+  "reportLinkExpires": "The link works for 15 minutes.",
+  "@reportLinkExpires": {
+    "description": "reportLinkExpires"
+  },
+  "lettersTitle": "Letters",
+  "@lettersTitle": {
+    "description": "lettersTitle"
+  },
+  "letterNew": "New letter",
+  "@letterNew": {
+    "description": "letterNew"
+  },
+  "lettersEmpty": "No letters yet.",
+  "@lettersEmpty": {
+    "description": "lettersEmpty"
+  },
+  "letterProblem": "What is the problem?",
+  "@letterProblem": {
+    "description": "letterProblem"
+  },
+  "problemGasHeater": "Gas heater",
+  "@problemGasHeater": {
+    "description": "problemGasHeater"
+  },
+  "problemCoAlarm": "No CO alarm",
+  "@problemCoAlarm": {
+    "description": "problemCoAlarm"
+  },
+  "problemDamp": "Damp or mold",
+  "@problemDamp": {
+    "description": "problemDamp"
+  },
+  "problemLeak": "Leak",
+  "@problemLeak": {
+    "description": "problemLeak"
+  },
+  "problemOther": "Other",
+  "@problemOther": {
+    "description": "problemOther"
+  },
+  "letterRecipient": "Who is it for?",
+  "@letterRecipient": {
+    "description": "letterRecipient"
+  },
+  "recipientLandlord": "Landlord",
+  "@recipientLandlord": {
+    "description": "recipientLandlord"
+  },
+  "recipientBuildingManager": "Building manager",
+  "@recipientBuildingManager": {
+    "description": "recipientBuildingManager"
+  },
+  "recipientAzerigaz": "Azerigaz",
+  "@recipientAzerigaz": {
+    "description": "recipientAzerigaz"
+  },
+  "recipientOther": "Other",
+  "@recipientOther": {
+    "description": "recipientOther"
+  },
+  "letterLanguage": "Language of the letter",
+  "@letterLanguage": {
+    "description": "letterLanguage"
+  },
+  "letterYourName": "Your name",
+  "@letterYourName": {
+    "description": "letterYourName"
+  },
+  "letterAddress": "Address of the home",
+  "@letterAddress": {
+    "description": "letterAddress"
+  },
+  "letterRecipientName": "Recipient name (optional)",
+  "@letterRecipientName": {
+    "description": "letterRecipientName"
+  },
+  "letterDescription": "Describe the problem in a few words",
+  "@letterDescription": {
+    "description": "letterDescription"
+  },
+  "letterSince": "Since when?",
+  "@letterSince": {
+    "description": "letterSince"
+  },
+  "letterPolish": "Improve the wording with AI (the facts stay the same)",
+  "@letterPolish": {
+    "description": "letterPolish"
+  },
+  "letterPreview": "Preview",
+  "@letterPreview": {
+    "description": "letterPreview"
+  },
+  "letterCopy": "Copy",
+  "@letterCopy": {
+    "description": "letterCopy"
+  },
+  "letterCopied": "Copied",
+  "@letterCopied": {
+    "description": "letterCopied"
+  },
+  "letterShare": "Share",
+  "@letterShare": {
+    "description": "letterShare"
+  },
+  "letterSavePdf": "Save as PDF",
+  "@letterSavePdf": {
+    "description": "letterSavePdf"
+  },
+  "letterSavedToLog": "The letter was added to your evidence log.",
+  "@letterSavedToLog": {
+    "description": "letterSavedToLog"
+  },
+  "letterGenerating": "Preparing your letter…",
+  "@letterGenerating": {
+    "description": "letterGenerating"
+  },
+  "letterFieldRequired": "Please fill this in.",
+  "@letterFieldRequired": {
+    "description": "letterFieldRequired"
+  },
+  "rightsTitle": "Your rights",
+  "@rightsTitle": {
+    "description": "rightsTitle"
+  },
+  "rightsNotice": "General information, not legal advice.",
+  "@rightsNotice": {
+    "description": "rightsNotice"
+  },
+  "rightsLawReference": "Law",
+  "@rightsLawReference": {
+    "description": "rightsLawReference"
+  },
+  "rightsReviewedBy": "Reviewed by {name} on {date}",
+  "@rightsReviewedBy": {
+    "description": "rightsReviewedBy",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "rightsNotReviewed": "Waiting for review by a lawyer.",
+  "@rightsNotReviewed": {
+    "description": "rightsNotReviewed"
+  },
+  "rightsPending": "This topic is being prepared and checked by a lawyer.",
+  "@rightsPending": {
+    "description": "rightsPending"
+  },
+  "chatTitle": "Ask HomeSafe",
+  "@chatTitle": {
+    "description": "chatTitle"
+  },
+  "chatNotice": "Answers are guidance, not a guarantee. In an emergency, use the red button.",
+  "@chatNotice": {
+    "description": "chatNotice"
+  },
+  "chatWelcome": "Ask about gas heaters, CO, damp, mold, or your rights at home.",
+  "@chatWelcome": {
+    "description": "chatWelcome"
+  },
+  "chatHint": "Type your question",
+  "@chatHint": {
+    "description": "chatHint"
+  },
+  "chatSend": "Send",
+  "@chatSend": {
+    "description": "chatSend"
+  },
+  "chatAttachPhoto": "Add a photo",
+  "@chatAttachPhoto": {
+    "description": "chatAttachPhoto"
+  },
+  "chatRemovePhoto": "Remove the photo",
+  "@chatRemovePhoto": {
+    "description": "chatRemovePhoto"
+  },
+  "chatEmergencyDetected": "This sounds like an emergency. Follow the emergency steps now. Your message was not sent.",
+  "@chatEmergencyDetected": {
+    "description": "chatEmergencyDetected"
+  },
+  "chatRateLimited": "You have reached today's limit of 30 messages. Try again tomorrow.",
+  "@chatRateLimited": {
+    "description": "chatRateLimited"
+  },
+  "chatError": "Could not get an answer. Check your internet and try again.",
+  "@chatError": {
+    "description": "chatError"
+  },
+  "chatEmergencyMentioned": "This answer includes emergency steps.",
+  "@chatEmergencyMentioned": {
+    "description": "chatEmergencyMentioned"
+  },
+  "chatThinking": "Thinking…",
+  "@chatThinking": {
+    "description": "chatThinking"
+  },
+  "chatYou": "You",
+  "@chatYou": {
+    "description": "chatYou"
+  },
+  "settingsTitle": "Settings",
+  "@settingsTitle": {
+    "description": "settingsTitle"
+  },
+  "settingsLanguage": "Language",
+  "@settingsLanguage": {
+    "description": "settingsLanguage"
+  },
+  "settingsHome": "Your home",
+  "@settingsHome": {
+    "description": "settingsHome"
+  },
+  "settingsNotifications": "Seasonal reminders",
+  "@settingsNotifications": {
+    "description": "settingsNotifications"
+  },
+  "settingsNotificationsBody": "A monthly reminder from October to April.",
+  "@settingsNotificationsBody": {
+    "description": "settingsNotificationsBody"
+  },
+  "settingsExport": "Export all my data",
+  "@settingsExport": {
+    "description": "settingsExport"
+  },
+  "settingsExportWorking": "Preparing your data…",
+  "@settingsExportWorking": {
+    "description": "settingsExportWorking"
+  },
+  "settingsExportReady": "Your data is ready. The link works for 15 minutes.",
+  "@settingsExportReady": {
+    "description": "settingsExportReady"
+  },
+  "settingsDownload": "Download",
+  "@settingsDownload": {
+    "description": "settingsDownload"
+  },
+  "settingsDelete": "Delete my account and data",
+  "@settingsDelete": {
+    "description": "settingsDelete"
+  },
+  "settingsDeleteConfirmTitle": "Delete everything?",
+  "@settingsDeleteConfirmTitle": {
+    "description": "settingsDeleteConfirmTitle"
+  },
+  "settingsDeleteConfirmBody": "This removes your account, homes, checks, evidence, photos and letters. It cannot be undone.",
+  "@settingsDeleteConfirmBody": {
+    "description": "settingsDeleteConfirmBody"
+  },
+  "settingsDeleteConfirm": "Delete",
+  "@settingsDeleteConfirm": {
+    "description": "settingsDeleteConfirm"
+  },
+  "settingsDeleted": "Your account and data were deleted.",
+  "@settingsDeleted": {
+    "description": "settingsDeleted"
+  },
+  "settingsPrivacy": "Privacy policy",
+  "@settingsPrivacy": {
+    "description": "settingsPrivacy"
+  },
+  "settingsTerms": "Terms of use",
+  "@settingsTerms": {
+    "description": "settingsTerms"
+  },
+  "settingsAbout": "About",
+  "@settingsAbout": {
+    "description": "settingsAbout"
+  },
+  "settingsSignOut": "Sign out",
+  "@settingsSignOut": {
+    "description": "settingsSignOut"
+  },
+  "settingsSignedInAs": "Signed in as {id}",
+  "@settingsSignedInAs": {
+    "description": "settingsSignedInAs",
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsGuest": "Using without an account",
+  "@settingsGuest": {
+    "description": "settingsGuest"
+  },
+  "aboutBody": "HomeSafe helps people in Baku find and deal with dangers at home. It gives guidance, not a guarantee.",
+  "@aboutBody": {
+    "description": "aboutBody"
+  },
+  "aboutVersion": "Version {version}",
+  "@aboutVersion": {
+    "description": "aboutVersion",
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "signInModeSignIn": "I have an account",
+  "@signInModeSignIn": {
+    "description": "signInModeSignIn"
+  },
+  "signInModeCreate": "I am new here",
+  "@signInModeCreate": {
+    "description": "signInModeCreate"
+  },
+  "passwordHint": "At least 8 characters",
+  "@passwordHint": {
+    "description": "passwordHint"
+  },
+  "showPassword": "Show password",
+  "@showPassword": {
+    "description": "showPassword"
+  },
+  "hidePassword": "Hide password",
+  "@hidePassword": {
+    "description": "hidePassword"
+  },
+  "forgotPassword": "Forgot your password?",
+  "@forgotPassword": {
+    "description": "forgotPassword"
+  },
+  "resetEmailSent": "We sent you a link to reset your password. Check your email.",
+  "@resetEmailSent": {
+    "description": "resetEmailSent"
+  },
+  "authErrorEmailInUse": "This email already has an account. Sign in instead.",
+  "@authErrorEmailInUse": {
+    "description": "authErrorEmailInUse"
+  },
+  "authErrorInvalidEmail": "Check the email address.",
+  "@authErrorInvalidEmail": {
+    "description": "authErrorInvalidEmail"
+  },
+  "emergencyBannerSub": "Gas smell, CO alarm, or someone feels unwell",
+  "@emergencyBannerSub": {
+    "description": "emergencyBannerSub"
+  },
+  "dashboardStatusTitle": "Your home safety",
+  "@dashboardStatusTitle": {
+    "description": "dashboardStatusTitle"
+  },
+  "dashboardToolsTitle": "Tools",
+  "@dashboardToolsTitle": {
+    "description": "dashboardToolsTitle"
+  },
+  "statusNotChecked": "Not checked yet",
+  "@statusNotChecked": {
+    "description": "statusNotChecked"
+  },
+  "statusCheckedOn": "Checked {date}",
+  "@statusCheckedOn": {
+    "description": "statusCheckedOn",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "statusStart": "Start",
+  "@statusStart": {
+    "description": "statusStart"
+  },
+  "statusAgain": "Check again",
+  "@statusAgain": {
+    "description": "statusAgain"
+  },
+  "checkMinutes": "About 2 minutes",
+  "@checkMinutes": {
+    "description": "checkMinutes"
+  },
+  "historyTitle": "Check history",
+  "@historyTitle": {
+    "description": "historyTitle"
+  },
+  "historyEmpty": "No checks yet. Your results will appear here.",
+  "@historyEmpty": {
+    "description": "historyEmpty"
+  },
+  "historyOnDevice": "Saved on this phone only. Save a result to your evidence log to keep it in your account.",
+  "@historyOnDevice": {
+    "description": "historyOnDevice"
+  },
+  "viewAll": "See all",
+  "@viewAll": {
+    "description": "viewAll"
+  },
+  "resultWriteLetter": "Write a letter about this",
+  "@resultWriteLetter": {
+    "description": "resultWriteLetter"
+  },
+  "signInWelcome": "Welcome back",
+  "@signInWelcome": {
+    "description": "signInWelcome"
+  },
+  "signInCreateTitle": "Create your account",
+  "@signInCreateTitle": {
+    "description": "signInCreateTitle"
+  },
+  "orDivider": "or",
+  "@orDivider": {
+    "description": "orDivider"
+  },
+  "tipTitle": "Safety tip",
+  "@tipTitle": {
+    "description": "tipTitle"
+  },
+  "chatSuggestTitle": "Try asking",
+  "@chatSuggestTitle": {
+    "description": "chatSuggestTitle"
+  },
+  "chatSuggest1": "My windows are wet every morning. What should I do?",
+  "@chatSuggest1": {
+    "description": "chatSuggest1"
+  },
+  "chatSuggest2": "How often should a gas boiler be checked?",
+  "@chatSuggest2": {
+    "description": "chatSuggest2"
+  },
+  "chatSuggest3": "Where should I put a CO alarm?",
+  "@chatSuggest3": {
+    "description": "chatSuggest3"
+  },
+  "chatAssistantUnavailable": "The assistant is not available right now. Please try again later.",
+  "@chatAssistantUnavailable": {
+    "description": "chatAssistantUnavailable"
+  },
+  "rightsDraft": "Draft: not yet checked by a lawyer. Use it as general guidance only.",
+  "@rightsDraft": {
+    "description": "rightsDraft"
+  },
+  "rightsDraftBadge": "Draft",
+  "@rightsDraftBadge": {
+    "description": "rightsDraftBadge"
+  },
+  "rightsSources": "Sources",
+  "@rightsSources": {
+    "description": "rightsSources"
+  },
+  "legalDocDraft": "Draft: a lawyer will finalise this text before launch.",
+  "@legalDocDraft": {
+    "description": "legalDocDraft"
+  },
+  "signInAgree": "By creating an account you agree to the Terms of use and the Privacy policy.",
+  "@signInAgree": {
+    "description": "signInAgree"
+  },
+  "settingsAccount": "Account",
+  "@settingsAccount": {
+    "description": "settingsAccount"
+  },
+  "settingsApp": "App",
+  "@settingsApp": {
+    "description": "settingsApp"
+  },
+  "settingsYourData": "Your data",
+  "@settingsYourData": {
+    "description": "settingsYourData"
+  },
+  "settingsLegal": "Legal",
+  "@settingsLegal": {
+    "description": "settingsLegal"
+  }
+}

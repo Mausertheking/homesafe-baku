@@ -1,0 +1,46 @@
+{
+  "_comment": "Single source of truth for emergency keyword detection, used by BOTH the Flutter app and Cloud Functions (tool/sync_shared.sh copies it). Both sides fold the message AND these phrases the same way before matching: lowercase; Azerbaijani letters to ASCII (ə→e, ı/İ→i, ğ→g, ö→o, ü→u, ç→c, ş→s); ё→е; anything that is not a letter or digit becomes a space; spaces collapsed. A phrase matches when it appears at the START of a word in the folded message, so stems work ('угар' matches 'угарный', 'qaz' matches 'qazın') but not mid-word ('pec' does not match 'specialist'). Shared test vectors: emergency_keyword_cases.json. TODO(team): review the word lists with native speakers before launch.",
+  "version": 1,
+  "phrases": {
+    "en": [
+      "gas smell", "smell gas", "smell of gas", "smells like gas", "smells of gas", "smelling gas",
+      "gas leak", "leaking gas",
+      "rotten egg",
+      "co alarm", "co detector", "co sensor", "carbon monoxide",
+      "unconscious", "passed out", "fainted", "can t wake", "cannot wake", "not breathing",
+      "dizzy", "dizziness"
+    ],
+    "az": [
+      "qaz iyi", "qaz qoxu", "qaz sızır", "qaz sızma", "qaz gəlir",
+      "çürük yumurta",
+      "dəm qaz", "dəm olmuş", "karbon monoksid", "co siqnal", "co sensor", "co detektor",
+      "huşunu itir", "huşsuz", "bayıl",
+      "başım hərlən", "baş hərlən", "başım gicəllən", "baş gicəllən", "gicəllən"
+    ],
+    "ru": [
+      "запах газа", "пахнет газом", "газом пахнет", "воняет газом", "утечка газа", "утечку газа",
+      "тухлые яйца", "тухлыми яйцами", "тухлых яиц", "тухлое яйцо",
+      "угар", "датчик co", "датчик угарн", "сигнализатор",
+      "без сознания", "потерял сознание", "потеряла сознание", "обморок",
+      "кружится голова", "голова кружится", "головокружен"
+    ]
+  },
+  "combos": [
+    {
+      "id": "headache_or_nausea_with_heater",
+      "_comment": "Matches only when at least one phrase from EVERY group appears in the message.",
+      "groups": [
+        [
+          "headache", "head ache", "head hurts", "nausea", "feel sick", "vomit",
+          "baş ağr", "başım ağr", "başağrı", "ürəkbulan", "qusma", "qusur",
+          "головн", "болит голова", "голова болит", "тошн", "рвот"
+        ],
+        [
+          "heater", "boiler", "gas", "stove", "geyser",
+          "qızdırıcı", "peç", "kombi", "kolonka", "qaz",
+          "колонк", "котел", "обогрев", "печк", "газ"
+        ]
+      ]
+    }
+  ]
+}

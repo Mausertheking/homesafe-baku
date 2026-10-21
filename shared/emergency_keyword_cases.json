@@ -1,0 +1,33 @@
+{
+  "_comment": "Shared test vectors. Both the Dart test (app/test/emergency_keywords_test.dart) and the TypeScript test (functions/test/emergency.test.ts) must pass every case, which proves client and server detect the same messages.",
+  "cases": [
+    { "text": "I smell gas in the kitchen", "emergency": true },
+    { "text": "There's a ROTTEN EGG smell near the boiler", "emergency": true },
+    { "text": "My CO alarm keeps beeping!!", "emergency": true },
+    { "text": "my mother is unconscious", "emergency": true },
+    { "text": "I feel dizzy at home", "emergency": true },
+    { "text": "I get a headache every evening when the heater is on", "emergency": true },
+    { "text": "Mətbəxdə qaz iyi gəlir", "emergency": true },
+    { "text": "metbexde qaz iyi gelir", "emergency": true },
+    { "text": "Vannada QAZ İYİ var", "emergency": true },
+    { "text": "Çürük yumurta qoxusu var", "emergency": true },
+    { "text": "Başım ağrıyır, kombi işləyəndə", "emergency": true },
+    { "text": "basim herlenir", "emergency": true },
+    { "text": "Uşaq bayıldı", "emergency": true },
+    { "text": "В квартире пахнет газом", "emergency": true },
+    { "text": "Сработал датчик угарного газа", "emergency": true },
+    { "text": "Болит голова, когда работает колонка", "emergency": true },
+    { "text": "Бабушка без сознания", "emergency": true },
+    { "text": "Тухлыми яйцами пахнет в ванной", "emergency": true },
+    { "text": "головокружение после душа", "emergency": true },
+    { "text": "How do I clean black mold in the bathroom?", "emergency": false },
+    { "text": "What are my rights about the deposit?", "emergency": false },
+    { "text": "I have a headache, should I see a specialist about my contract?", "emergency": false },
+    { "text": "When should I service my boiler?", "emergency": false },
+    { "text": "Divarda rütubət və kif var", "emergency": false },
+    { "text": "Ev sahibi depoziti qaytarmır", "emergency": false },
+    { "text": "На стене плесень, что делать?", "emergency": false },
+    { "text": "Кочегар сказал проверить трубу", "emergency": false },
+    { "text": "", "emergency": false }
+  ]
+}

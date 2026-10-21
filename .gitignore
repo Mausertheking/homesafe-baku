@@ -1,0 +1,36 @@
+# ---- Secrets: NEVER commit these ----
+# Gemini key for the local emulator lives in functions/.secret.local.
+# Production uses `firebase functions:secrets:set GEMINI_API_KEY` (never a file).
+*.local
+.env
+.env.*
+!.env.example
+*.secret
+*secret*.json
+service-account*.json
+*-key.json
+*.pem
+*.p12
+*.keystore
+*.jks
+key.properties
+GoogleService-Info.plist
+google-services.json
+
+# ---- Local emulator data and logs ----
+.emulator-data/
+.firebase/
+*-debug.log
+*.log
+
+# ---- Build output and dependencies ----
+node_modules/
+functions/lib/
+functions/test-output/
+app/build/
+.dart_tool/
+
+# ---- OS / editor ----
+.DS_Store
+.idea/
+*.iml

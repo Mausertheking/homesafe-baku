@@ -1,0 +1,114 @@
+rules_version = '2';
+
+// HomeSafe Firestore security rules.
+// - Users can read and write ONLY their own data under users/{uid}.
+// - rules, legalTopics, config, letterTemplates are read-only for clients.
+// - Evidence can never be edited; the only allowed change is the owner
+//   marking it deleted. sha256/serverTime are written only by Cloud Functions
+//   (the Admin SDK bypasses these rules).
+// - usage and abuseLog (rate limiting, abuse monitoring) are server-only.
+// Tested by security-tests/ with the Firebase emulator.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isOwner(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+    function data() {
+      return request.resource.data;
+    }
+    function optionalIn(field, values) {
+      return !(field in data()) || data()[field] == null || data()[field] in values;
+    }
+
+    // ---------- read-only reference data ----------
+    match /rules/{ruleId} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /legalTopics/{topicId} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /config/{docId} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /letterTemplates/{templateId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // ---------- user data ----------
+    match /users/{uid} {
+      allow read: if isOwner(uid);
+      allow create: if isOwner(uid)
+        && data().keys().hasOnly(['language', 'role', 'createdAt'])
+        && data().language in ['az', 'ru', 'en']
+        && optionalIn('role', ['renter', 'owner'])
+        && data().createdAt == request.time;
+      allow update: if isOwner(uid)
+        && data().diff(resource.data).affectedKeys().hasOnly(['language', 'role'])
+        && data().language in ['az', 'ru', 'en']
+        && optionalIn('role', ['renter', 'owner']);
+      allow delete: if false; // deleteMyAccount function only.
+
+      match /homes/{homeId} {
+        allow read: if isOwner(uid);
+        allow create, update: if isOwner(uid)
+          && data().keys().hasOnly(['district', 'buildingAgeBand', 'heatingType', 'heaterLocation', 'hasCoAlarm', 'hasWrittenContract'])
+          && optionalIn('buildingAgeBand', ['before_1960', '1960_1990', '1991_2010', 'after_2010', 'not_sure'])
+          && optionalIn('heatingType', ['individual_gas_heater', 'gas_boiler', 'central_heating', 'electric', 'other'])
+          && optionalIn('heaterLocation', ['bathroom', 'kitchen', 'other', 'none'])
+          && optionalIn('hasCoAlarm', ['yes', 'no', 'not_sure'])
+          && optionalIn('hasWrittenContract', [true, false])
+          && (!('district' in data()) || data().district == null || (data().district is string && data().district.size() <= 40));
+        allow delete: if false;
+
+        // Check results: append-only.
+        match /checks/{checkId} {
+          allow read: if isOwner(uid);
+          allow create: if isOwner(uid)
+            && data().keys().hasOnly(['hazard', 'answers', 'resultLevel', 'matchedRuleIds', 'rulesVersion', 'createdAt'])
+            && data().keys().hasAll(['hazard', 'answers', 'resultLevel', 'matchedRuleIds', 'rulesVersion', 'createdAt'])
+            && data().hazard in ['gas_co', 'damp_mold']
+            && data().resultLevel in ['red', 'amber', 'green']
+            && data().answers is map && data().answers.size() <= 50
+            && data().matchedRuleIds is list && data().matchedRuleIds.size() <= 100
+            && data().rulesVersion is int
+            && data().createdAt == request.time;
+          allow update, delete: if false;
+        }
+
+        // Evidence: create once, never edit, only "mark deleted".
+        match /evidence/{itemId} {
+          allow read: if isOwner(uid);
+          allow create: if isOwner(uid)
+            && data().keys().hasOnly(['type', 'text', 'storagePath', 'checkId', 'deleted', 'createdAt'])
+            && data().type in ['photo', 'note', 'symptom', 'check'] // 'letter' items come from generateLetter.
+            && data().text is string && data().text.size() <= 5000
+            && data().deleted == false
+            && data().createdAt == request.time
+            && (data().type == 'photo') == ('storagePath' in data())
+            && (!('storagePath' in data())
+                || data().storagePath == 'users/' + uid + '/homes/' + homeId + '/evidence/' + itemId + '/photo.jpg')
+            && (!('checkId' in data()) || (data().type == 'check' && data().checkId is string));
+          allow update: if isOwner(uid)
+            && resource.data.deleted == false
+            && data().diff(resource.data).affectedKeys().hasOnly(['deleted', 'deletedAt'])
+            && data().deleted == true
+            && data().deletedAt == request.time;
+          allow delete: if false;
+        }
+
+        // Letters are created by the generateLetter function only.
+        match /letters/{letterId} {
+          allow read: if isOwner(uid);
+          allow write: if false;
+        }
+      }
+    }
+
+    // Everything else (usage, abuseLog, ...) is denied by default.
+  }
+}

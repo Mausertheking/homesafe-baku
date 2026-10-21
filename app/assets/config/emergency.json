@@ -1,0 +1,13 @@
+{
+  "_comment": "Bundled emergency numbers so the emergency screen works with no internet. config/app.emergencyNumbers in Firestore can override this when online (it is cached locally). Order = order on screen.",
+  "_todo": "TODO(team): VERIFY every number against official Azerbaijani sources before launch, then set verified to true. These are commonly published numbers, not yet verified for this app.",
+  "version": 1,
+  "verified": false,
+  "numbers": [
+    { "id": "gas", "labelKey": "emergency.service.gas", "number": "104" },
+    { "id": "general", "labelKey": "emergency.service.general", "number": "112" },
+    { "id": "ambulance", "labelKey": "emergency.service.ambulance", "number": "103" },
+    { "id": "fire", "labelKey": "emergency.service.fire", "number": "101" },
+    { "id": "police", "labelKey": "emergency.service.police", "number": "102" }
+  ]
+}
