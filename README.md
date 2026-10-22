@@ -115,14 +115,33 @@ cd functions && GEMINI_LIVE=1 npx vitest run test/live.test.ts
 
 ## Setting up a real Firebase project
 
-1. `firebase use --add` (replace `demo-homesafe` in `.firebaserc`), then `cd app && flutterfire configure` (this replaces the placeholder `lib/firebase_options.dart`; until then the app runs offline-only).
-2. Enable the Auth provider **Email/Password** (phone sign-in was removed; the app uses email only, with password reset).
-3. Set the secret: `firebase functions:secrets:set GEMINI_API_KEY`. Optionally set `GEMINI_MODEL` in `functions/.env`.
-4. Deploy: `firebase deploy --only firestore,storage,functions`.
-5. Seed reference data: `cd functions && npm run build && GCLOUD_PROJECT=<id> npm run seed`.
-6. App Check: register Play Integrity (Android) and App Attest/DeviceCheck (iOS), then **enforce** App Check for Firestore and Storage in the console (callables already set `enforceAppCheck`). Register debug tokens for development builds.
-7. Signed URLs: give the functions' service account the "Service Account Token Creator" role on itself.
-8. Firestore TTL policy on `usage.expiresAt`; Storage lifecycle rule to delete `reports/`, `letters/` and `exports/` objects after 1 day.
+In the Firebase console (https://console.firebase.google.com):
+
+1. **Add project** (for example `homesafe-baku`).
+2. **Upgrade to the Blaze plan** (Cloud Functions need it). Set a budget alert, for example $5/month; normal team testing stays within the free quotas.
+3. **Authentication → Get started → Email/Password → Enable.**
+4. **Firestore Database → Create database →** location `europe-west1` (Belgium), **production mode**. (The location cannot be changed later; functions run in `europe-west1` too.)
+5. **Storage → Get started →** same location, production mode.
+
+On this computer:
+
+```bash
+security-tests/node_modules/.bin/firebase login
+```
+
+```bash
+security-tests/node_modules/.bin/firebase functions:secrets:set GEMINI_API_KEY --project <project-id>
+```
+
+```bash
+tool/deploy.sh <project-id>
+```
+
+`tool/deploy.sh` checks for secrets, deploys the security rules, all Cloud Functions and the web app to Firebase Hosting, and prints the live link (`https://<project-id>.web.app`). It needs `app/lib/firebase_options.dart` to contain the project's web config (`firebase apps:sdkconfig web`).
+
+App Check: for the web, create a reCAPTCHA v3 key (https://www.google.com/recaptcha/admin, domains `<project-id>.web.app` and `localhost`), register it in **App Check → Apps → Web**, then deploy with `RECAPTCHA_SITE_KEY=<site key> tool/deploy.sh <project-id>`. Without a key the server is deployed with `APP_CHECK_REQUIRED=false`, which is fine for team testing but must be switched on before public launch. For Android/iOS register Play Integrity and App Attest/DeviceCheck and enforce App Check for Firestore and Storage.
+
+Optional: grant the functions' service account "Service Account Token Creator" on itself so report/letter links are 15-minute signed URLs (otherwise private download tokens are used; `cleanupTempFiles` deletes the files after one day either way). A Firestore TTL policy on `usage.expiresAt` keeps the rate-limit counters tidy.
 
 ## Before launch (TODOs left for the team, deliberately not invented)
 

@@ -1,4 +1,4 @@
-import { defineSecret, defineString } from 'firebase-functions/params';
+import { defineBoolean, defineSecret, defineString } from 'firebase-functions/params';
 
 /** Must match functionsRegion in app/lib/core/callables.dart. */
 export const REGION = 'europe-west1';
@@ -32,4 +32,14 @@ export const SIGNED_URL_MINUTES = 15;
  * when deploying or running in Cloud Functions.
  */
 export const IN_EMULATOR = process.env.FUNCTIONS_EMULATOR === 'true';
-export const ENFORCE_APP_CHECK = !IN_EMULATOR;
+
+/**
+ * Deploy-time switch, default ON. Set APP_CHECK_REQUIRED=false in
+ * functions/.env.<projectId> only for an early team test before the web
+ * App Check (reCAPTCHA) key exists; switch it back on before public launch.
+ */
+export const APP_CHECK_REQUIRED = defineBoolean('APP_CHECK_REQUIRED', {
+  default: true,
+  description: 'Require Firebase App Check on callable functions (keep true in production)',
+});
+export const ENFORCE_APP_CHECK = IN_EMULATOR ? false : APP_CHECK_REQUIRED;

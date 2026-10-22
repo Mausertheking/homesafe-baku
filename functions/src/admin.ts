@@ -3,6 +3,7 @@ import { getAuth } from 'firebase-admin/auth';
 import { getFirestore } from 'firebase-admin/firestore';
 import { getMessaging } from 'firebase-admin/messaging';
 import { getStorage } from 'firebase-admin/storage';
+import { logger } from 'firebase-functions';
 import { HttpsError, type CallableRequest } from 'firebase-functions/v2/https';
 
 import { randomUUID } from 'node:crypto';
@@ -31,19 +32,29 @@ export function requireId(value: unknown, name: string): string {
   return value;
 }
 
-/** Short-lived read link for a private file (reports, letters, exports). */
+/**
+ * Read link for a private file (reports, letters, exports).
+ * Preferred: a V4 signed URL valid for 15 minutes. That needs the functions'
+ * service account to have "Service Account Token Creator" on itself; until
+ * someone grants it (and in the emulator) we fall back to a private download
+ * token. Either way the file is deleted after a day by cleanupTempFiles.
+ */
 export async function signedUrl(path: string): Promise<string> {
-  if (IN_EMULATOR) {
-    // The emulator cannot sign URLs (no service account). Use a private
-    // download token instead; this branch never runs in production.
-    const token = randomUUID();
-    const file = bucket().file(path);
-    await file.setMetadata({ metadata: { firebaseStorageDownloadTokens: token } });
-    const host = process.env.FIREBASE_STORAGE_EMULATOR_HOST ?? '127.0.0.1:9199';
-    return `http://${host}/v0/b/${bucket().name}/o/${encodeURIComponent(path)}?alt=media&token=${token}`;
+  const file = bucket().file(path);
+  if (!IN_EMULATOR) {
+    try {
+      const [url] = await file.getSignedUrl({
+        action: 'read', version: 'v4', expires: Date.now() + SIGNED_URL_MINUTES * 60 * 1000,
+      });
+      return url;
+    } catch (err) {
+      logger.warn('signed URL unavailable, using a download token', { error: (err as Error).message });
+    }
   }
-  const [url] = await bucket()
-    .file(path)
-    .getSignedUrl({ action: 'read', version: 'v4', expires: Date.now() + SIGNED_URL_MINUTES * 60 * 1000 });
-  return url;
+  const token = randomUUID();
+  await file.setMetadata({ metadata: { firebaseStorageDownloadTokens: token } });
+  const base = IN_EMULATOR
+    ? `http://${process.env.FIREBASE_STORAGE_EMULATOR_HOST ?? '127.0.0.1:9199'}`
+    : 'https://firebasestorage.googleapis.com';
+  return `${base}/v0/b/${bucket().name}/o/${encodeURIComponent(path)}?alt=media&token=${token}`;
 }

@@ -208,9 +208,13 @@ describe('PDF', () => {
 
 describe('App Check', () => {
   it('is enforced unless running inside the local Functions emulator', async () => {
-    const { ENFORCE_APP_CHECK, IN_EMULATOR } = await import('../src/config.js');
+    const { ENFORCE_APP_CHECK, IN_EMULATOR, APP_CHECK_REQUIRED } = await import('../src/config.js');
     expect(IN_EMULATOR).toBe(process.env.FUNCTIONS_EMULATOR === 'true');
-    if (process.env.FUNCTIONS_EMULATOR !== 'true') expect(ENFORCE_APP_CHECK).toBe(true);
+    if (process.env.FUNCTIONS_EMULATOR !== 'true') {
+      // A deploy-time param that defaults to ON.
+      expect(ENFORCE_APP_CHECK).toBe(APP_CHECK_REQUIRED);
+      expect((APP_CHECK_REQUIRED as unknown as { options: { default: boolean } }).options.default).toBe(true);
+    }
   });
 });
 
@@ -235,5 +239,16 @@ describe('off-topic requests', () => {
     expect(finalizeAnswer('', 'ru').answer).toMatch(/только с безопасностью дома/);
     const normal = finalizeAnswer('[[EMERGENCY]]\n1. **Leave** now', 'en');
     expect(normal).toEqual({ answer: '1. Leave now', mentionsEmergency: true, offTopic: false });
+  });
+});
+
+describe('temporary file cleanup', () => {
+  it('deletes generated files only after one day', async () => {
+    const { isExpired, TEMP_PREFIXES } = await import('../src/cleanup.js');
+    const now = Date.parse('2026-10-22T12:00:00Z');
+    expect(isExpired('2026-10-21T11:59:00Z', now)).toBe(true);
+    expect(isExpired('2026-10-22T09:00:00Z', now)).toBe(false);
+    expect(isExpired(undefined, now)).toBe(false);
+    expect(TEMP_PREFIXES).not.toContain('users/'); // Evidence photos are never cleaned up.
   });
 });
