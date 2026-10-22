@@ -20,6 +20,7 @@ import '../features/rights/legal_doc_screen.dart';
 import '../features/rights/rights_screen.dart';
 import '../features/settings/settings_screen.dart';
 import 'settings.dart';
+import 'demo.dart';
 
 /// Routes that never redirect: the emergency screen must always open.
 const _openRoutes = {'/emergency', '/onboarding', '/sign-in', '/legal/privacy', '/legal/terms'};
@@ -43,7 +44,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       // Still restoring the saved login: stay where we are for now.
       if (!ref.read(authResolvedProvider)) return null;
       final signedIn = ref.read(currentUserProvider) != null;
-      if (!signedIn && !settings.guestMode && !_openRoutes.contains(path)) return '/sign-in';
+      if (!signedIn && !settings.guestMode && !demoMode && !_openRoutes.contains(path)) return '/sign-in';
       return null;
     },
     routes: [

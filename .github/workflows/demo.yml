@@ -1,0 +1,49 @@
+name: Deploy web demo
+
+# Publishes the app as a public web demo on GitHub Pages:
+# https://<owner>.github.io/homesafe-baku/
+# Built with DEMO=true: no server, no keys. Everything that works on the
+# device is live; account features show that they are off in the demo.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - run: flutter build web --release --dart-define=DEMO=true --base-href "/${{ github.event.repository.name }}/"
+      # Single-page app: unknown paths fall back to the app.
+      - run: cp build/web/index.html build/web/404.html
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: app/build/web
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

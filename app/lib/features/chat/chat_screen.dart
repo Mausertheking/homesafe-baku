@@ -8,6 +8,7 @@ import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../../core/analytics.dart';
+import '../../core/demo.dart';
 import '../../core/callables.dart';
 import '../../core/settings.dart';
 import '../../core/theme.dart';
@@ -145,7 +146,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
           ),
           Expanded(
             child: user == null
-                ? UnavailableView(message: l.signInRequired, actionLabel: l.signIn, action: () => context.push('/sign-in'))
+                ? const AccountRequiredView()
                 : ListView(
                     controller: _scroll,
                     padding: const EdgeInsets.all(16),

@@ -1,6 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'demo.dart';
+
 /// Overridden in main() with the loaded instance, so reads are synchronous.
 final sharedPreferencesProvider =
     Provider<SharedPreferences>((ref) => throw UnimplementedError('loaded in main'));
@@ -46,7 +48,7 @@ class SettingsController extends Notifier<AppSettings> {
     return AppSettings(
       language: supportedLanguages.contains(lang) ? lang! : 'az',
       onboardingDone: prefs.getBool(_kOnboarding) ?? false,
-      guestMode: prefs.getBool(_kGuest) ?? false,
+      guestMode: prefs.getBool(_kGuest) ?? demoMode,
       notificationsEnabled: prefs.getBool(_kNotifications) ?? true,
     );
   }

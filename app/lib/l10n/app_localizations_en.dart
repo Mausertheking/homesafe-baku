@@ -870,4 +870,15 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settingsLegal => 'Legal';
+
+  @override
+  String get demoBanner =>
+      'Online demo: the emergency screen, safety checks, history and Your rights work here. Accounts, the evidence log, letters, reports and the AI assistant need the HomeSafe server and are switched off.';
+
+  @override
+  String get demoFeatureOff =>
+      'This feature needs the HomeSafe server, so it is switched off in the online demo.';
+
+  @override
+  String get demoAccount => 'Online demo: no account needed';
 }

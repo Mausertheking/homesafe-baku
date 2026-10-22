@@ -870,4 +870,15 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get settingsLegal => 'Hüquqi';
+
+  @override
+  String get demoBanner =>
+      'Onlayn demo: təcili ekran, təhlükəsizlik yoxlamaları, tarixçə və Hüquqlarınız burada işləyir. Hesablar, sübut jurnalı, məktublar, hesabatlar və Sİ köməkçisi HomeSafe serveri tələb edir və söndürülüb.';
+
+  @override
+  String get demoFeatureOff =>
+      'Bu funksiya HomeSafe serveri tələb edir, ona görə onlayn demoda söndürülüb.';
+
+  @override
+  String get demoAccount => 'Onlayn demo: hesab lazım deyil';
 }

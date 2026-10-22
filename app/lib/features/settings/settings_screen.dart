@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../core/callables.dart';
+import '../../core/demo.dart';
 import '../../core/settings.dart';
 import '../../core/widgets.dart';
 import '../../l10n/app_localizations.dart';
@@ -119,8 +120,14 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           group(l.settingsAccount, [
             ListTile(
               leading: const Icon(Icons.person_outline_rounded),
-              title: Text(user == null ? l.settingsGuest : l.settingsSignedInAs(user.email ?? '')),
-              trailing: user == null
+              title: Text(demoMode
+                  ? l.demoAccount
+                  : user == null
+                      ? l.settingsGuest
+                      : l.settingsSignedInAs(user.email ?? '')),
+              trailing: demoMode
+                  ? null
+                  : user == null
                   ? TextButton(onPressed: () => context.push('/sign-in'), child: Text(l.signIn))
                   : TextButton(
                       onPressed: () async {

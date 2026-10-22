@@ -1707,6 +1707,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Legal'**
   String get settingsLegal;
+
+  /// demoBanner
+  ///
+  /// In en, this message translates to:
+  /// **'Online demo: the emergency screen, safety checks, history and Your rights work here. Accounts, the evidence log, letters, reports and the AI assistant need the HomeSafe server and are switched off.'**
+  String get demoBanner;
+
+  /// demoFeatureOff
+  ///
+  /// In en, this message translates to:
+  /// **'This feature needs the HomeSafe server, so it is switched off in the online demo.'**
+  String get demoFeatureOff;
+
+  /// demoAccount
+  ///
+  /// In en, this message translates to:
+  /// **'Online demo: no account needed'**
+  String get demoAccount;
 }
 
 class _AppLocalizationsDelegate

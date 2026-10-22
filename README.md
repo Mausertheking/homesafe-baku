@@ -2,6 +2,8 @@
 
 A mobile app (Flutter, iOS and Android) that helps people in Baku find and deal with home hazards (gas heaters, carbon monoxide, damp and mold), document problems with tamper-evident evidence, write repair letters, read reviewed legal information, and ask an AI assistant.
 
+**Live web demo:** https://mausertheking.github.io/homesafe-baku/ (open it on a phone for the real feel). The demo runs without a server: the emergency screen, both safety checks, check history, Your rights, the legal pages and all three languages work; accounts, the evidence log, letters, reports and the AI assistant are switched off there. It is rebuilt automatically on every push to `main` (`.github/workflows/demo.yml`, built with `--dart-define=DEMO=true`).
+
 > **Status:** feature-complete MVP, not launch-ready. The legal texts are written as **drafts** and every hazard rule, letter template and emergency number is still waiting for expert review (see "Before launch" below).
 
 ## Secrets: what is NOT in this repository

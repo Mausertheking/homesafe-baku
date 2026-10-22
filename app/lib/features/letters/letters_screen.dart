@@ -8,6 +8,7 @@ import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../core/analytics.dart';
+import '../../core/demo.dart';
 import '../../core/callables.dart';
 import '../../core/settings.dart';
 import '../../core/widgets.dart';
@@ -54,7 +55,7 @@ class LettersScreen extends ConsumerWidget {
               label: Text(l.letterNew),
             ),
       body: user == null
-          ? UnavailableView(message: l.signInRequired, actionLabel: l.signIn, action: () => context.push('/sign-in'))
+          ? const AccountRequiredView()
           : StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
               stream: FirebaseFirestore.instance
                   .collection('users/${user.uid}/homes/$homeId/letters')

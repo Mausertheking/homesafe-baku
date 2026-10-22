@@ -1,11 +1,11 @@
 {
-    "name": "homesafe",
-    "short_name": "homesafe",
+    "name": "HomeSafe",
+    "short_name": "HomeSafe",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#0E6E7E",
+    "theme_color": "#0E6E7E",
+    "description": "HomeSafe: safety checks for gas, carbon monoxide, damp and mold, an offline emergency screen, and plain-language housing rights for Baku homes.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

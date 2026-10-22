@@ -267,5 +267,8 @@
   "settingsAccount": "Hesab",
   "settingsApp": "Tətbiq",
   "settingsYourData": "Məlumatlarınız",
-  "settingsLegal": "Hüquqi"
+  "settingsLegal": "Hüquqi",
+  "demoBanner": "Onlayn demo: təcili ekran, təhlükəsizlik yoxlamaları, tarixçə və Hüquqlarınız burada işləyir. Hesablar, sübut jurnalı, məktublar, hesabatlar və Sİ köməkçisi HomeSafe serveri tələb edir və söndürülüb.",
+  "demoFeatureOff": "Bu funksiya HomeSafe serveri tələb edir, ona görə onlayn demoda söndürülüb.",
+  "demoAccount": "Onlayn demo: hesab lazım deyil"
 }

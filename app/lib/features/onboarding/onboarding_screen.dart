@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../core/analytics.dart';
+import '../../core/demo.dart';
 import '../../core/settings.dart';
 import '../../core/widgets.dart';
 import '../../l10n/app_localizations.dart';
@@ -29,7 +30,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
     final settings = ref.read(settingsProvider);
     ref.read(analyticsProvider).log('onboarding_complete', {'language': settings.language});
     await ref.read(settingsProvider.notifier).completeOnboarding();
-    if (mounted) context.go('/sign-in');
+    if (mounted) context.go(demoMode ? '/' : '/sign-in');
   }
 
   @override

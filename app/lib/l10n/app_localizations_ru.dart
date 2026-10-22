@@ -865,4 +865,15 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get settingsLegal => 'Правовая информация';
+
+  @override
+  String get demoBanner =>
+      'Онлайн-демо: здесь работают экстренный экран, проверки безопасности, история и «Ваши права». Аккаунты, журнал доказательств, письма, отчёты и ИИ-помощник требуют сервера HomeSafe и отключены.';
+
+  @override
+  String get demoFeatureOff =>
+      'Этой функции нужен сервер HomeSafe, поэтому в онлайн-демо она отключена.';
+
+  @override
+  String get demoAccount => 'Онлайн-демо: аккаунт не нужен';
 }

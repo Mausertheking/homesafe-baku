@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 
+import '../../core/demo.dart';
 import '../../core/settings.dart';
 import '../../core/theme.dart';
 import '../../core/widgets.dart';
@@ -59,6 +60,10 @@ class DashboardScreen extends ConsumerWidget {
           // Always first, always visible.
           const EmergencyBanner(),
           const SizedBox(height: 14),
+          if (demoMode) ...[
+            NoticeBanner(text: l.demoBanner, icon: Icons.public_rounded, warning: true),
+            const SizedBox(height: 12),
+          ],
           if (isHeatingSeason((now ?? DateTime.now)())) ...[
             _InfoCard(icon: Icons.thermostat_rounded, title: l.seasonalTitle, body: l.seasonalBody),
             const SizedBox(height: 12),

@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../core/analytics.dart';
 import '../../core/content_strings.dart';
+import '../../core/demo.dart';
 import '../../core/theme.dart';
 import '../../core/widgets.dart';
 import '../../l10n/app_localizations.dart';
@@ -27,6 +28,10 @@ class _CheckResultScreenState extends ConsumerState<CheckResultScreen> {
   bool _requireAccount() {
     if (ref.read(currentUserProvider) != null) return true;
     final l = AppLocalizations.of(context);
+    if (demoMode) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l.demoFeatureOff)));
+      return false;
+    }
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       content: Text(l.signInRequired),
       action: SnackBarAction(label: l.signIn, onPressed: () => context.push('/sign-in')),

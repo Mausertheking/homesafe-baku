@@ -9,6 +9,7 @@ import 'package:intl/intl.dart';
 
 import '../../core/analytics.dart';
 import '../../core/content_strings.dart';
+import '../../core/demo.dart';
 import '../../core/settings.dart';
 import '../../core/widgets.dart';
 import '../../l10n/app_localizations.dart';
@@ -44,7 +45,7 @@ class EvidenceScreen extends ConsumerWidget {
               label: Text(l.evidenceAdd),
             ),
       body: user == null
-          ? UnavailableView(message: l.signInRequired, actionLabel: l.signIn, action: () => context.push('/sign-in'))
+          ? const AccountRequiredView()
           : ref.watch(evidenceStreamProvider).when(
                 loading: () => const Center(child: CircularProgressIndicator()),
                 error: (_, _) => UnavailableView(message: l.errorGeneric),
